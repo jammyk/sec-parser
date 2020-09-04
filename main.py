@@ -1,5 +1,5 @@
-from dataset.tag import Tag
-
+from dataset.number import Number
+from database.number_repository import NumberRepository
 file_to_table_name_map = {
     'cal.tsv': 'calculations',
     'dim.tsv': 'dimensions',
@@ -14,9 +14,11 @@ file_to_table_name_map = {
 
 def read_tsv(file_name):
     with open(file_name) as file:
-        ds = Tag()
-        return ds.parse_dataset(file)
+        ds = Number()
+        data = ds.parse_dataset(file)
+        number_repo = NumberRepository()
+        number_repo.insert_numbers(data)
 
 
 if __name__ == '__main__':
-    print(read_tsv('./data/tag.tsv'))
+    print(read_tsv('./data/num.tsv'))
