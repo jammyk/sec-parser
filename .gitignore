@@ -1,1 +1,11 @@
+# authentication files
 dbauth.py
+
+# IntelliJ files
+.DS_Store
+.idea
+
+# exclude everything in data folder
+# -- but keep folder in repo
+data/*
+!data/.gitkeep
