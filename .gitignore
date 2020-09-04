@@ -1,5 +1,6 @@
 # authentication files
-dbauth.py
+authentication/*
+!authentication/.gitkeep
 
 # IntelliJ files
 .DS_Store
